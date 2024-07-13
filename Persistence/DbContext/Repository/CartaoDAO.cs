@@ -18,7 +18,7 @@ namespace Persistence.DbContext.Repository
                 _connection.Open();
                 using (SQLiteCommand _command = new SQLiteCommand(_connection))
                 {
-                    _command.CommandText = @"SELECT * FROM cartao";
+                    _command.CommandText = "SELECT * FROM cartao";
                     try
                     {
                         using (SQLiteDataReader _reader = _command.ExecuteReader())

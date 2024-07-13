@@ -63,6 +63,9 @@
     <Compile Include="DbContext\DbConnection.cs" />
     <Compile Include="DbContext\Migrations.cs" />
     <Compile Include="DbContext\Repository\CartaoDAO.cs" />
+    <Compile Include="DbContext\Repository\CompraCartaoDAO.cs" />
+    <Compile Include="DbContext\Repository\CompraDao.cs" />
+    <Compile Include="DbContext\Repository\MesDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

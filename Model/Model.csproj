@@ -63,6 +63,7 @@
     <Compile Include="Modelos\Cartao.cs" />
     <Compile Include="Modelos\Compra.cs" />
     <Compile Include="Modelos\CompraCartaoCredito.cs" />
+    <Compile Include="Modelos\Mes.cs" />
     <Compile Include="Modelos\Propietario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -18,10 +18,12 @@ namespace Model.Modelos
         public string Descricao { get; set; }
         public string DataDeAlteracao { get; set; }
         public string DataDeCriacao { get; set; }
+        public int IdMes { get; set; }
+        public int IdCompraParcelada { get; set; }
 
         public Compra() { }
 
-        public Compra(int id, double valor, int quantidade, string dataCompra, string local, string estabelecimento, string descricao, string dataAlteracao, string dataCriacao)
+        public Compra(int id, double valor, int quantidade, string dataCompra, string local, string estabelecimento, string descricao, string dataAlteracao, string dataCriacao, int idCompraCartao)
         {
             Id = id;
             Valor = valor;
@@ -32,6 +34,7 @@ namespace Model.Modelos
             Descricao = descricao;
             DataDeAlteracao = dataAlteracao;
             DataDeCriacao = dataCriacao;
+            IdCompraParcelada = idCompraCartao;
         }
 
         public Compra(SQLiteDataReader _reader)
@@ -43,8 +46,15 @@ namespace Model.Modelos
             Local = _reader["Local"].ToString();
             Estabelecimento = _reader["Estabelecimento"].ToString();
             Descricao = _reader["Descricao"].ToString();
-            DataDeAlteracao = _reader["DataAlteracao"].ToString();
+            DataDeAlteracao = _reader["DataDeAlteracao"].ToString();
             DataDeCriacao = _reader["DataDeCriacao"].ToString();
+            IdMes = Int32.Parse(_reader["IdMes"].ToString());
+            IdCompraParcelada = Int32.Parse(_reader["IdCompraParcelada"].ToString());
+        }
+
+        public override string ToString()
+        {
+            return $"id: {Id}, local: {Local}, valor: {Valor.ToString("F")}, compra: {IdCompraParcelada}, idMes: {IdMes}";
         }
     }
 }
