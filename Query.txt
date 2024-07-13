@@ -1,0 +1,40 @@
+SELECT name FROM pragma_table_info('ApontamentoManutencao');
+
+
+
+CREATE TABLE propietario (
+    Id   INTEGER PRIMARY KEY AUTOINCREMENT
+                 NOT NULL,
+    Nome TEXT    NOT NULL
+);
+
+
+
+
+CREATE TABLE cartao (
+    Id            INTEGER PRIMARY KEY AUTOINCREMENT
+                          NOT NULL,
+    Nome          TEXT    NOT NULL,
+    DiaVencimento TEXT    NOT NULL,
+    IdPropietario INTEGER REFERENCES propietario (Id) 
+                          NOT NULL
+);
+
+
+
+
+CREATE TABLE compra (
+    Id              INTEGER PRIMARY KEY AUTOINCREMENT
+                            NOT NULL,
+    Valor           REAL    NOT NULL,
+    Quantidade      REAL    NOT NULL
+                            DEFAULT (1),
+    DataDeCompra    TEXT    NOT NULL,
+    Local           TEXT    NOT NULL,
+    Estabelecimento TEXT    NOT NULL,
+    Descricao       TEXT,
+    DataDeAlteracao TEXT    NOT NULL,
+    DataDeCriacao   TEXT    NOT NULL
+);
+
+
